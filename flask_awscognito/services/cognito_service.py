@@ -64,7 +64,7 @@ class CognitoService:
             raise FlaskAWSCognitoError(
                 f"no access token returned for code {response_json}"
             )
-        access_token = response_json["access_token"]
+        access_token = response_json["id_token"]
         return access_token
 
     def get_user_info(self, access_token, requests_client=None):
